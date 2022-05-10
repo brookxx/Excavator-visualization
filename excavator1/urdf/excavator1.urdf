@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="excavator1">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.0071989 -0.11792 -1.3696"
+        rpy="0 0 0" />
+      <mass
+        value="1584.9" />
+      <inertia
+        ixx="2199.8"
+        ixy="142.09"
+        ixz="1.5171"
+        iyy="1903.1"
+        iyz="-3.7756"
+        izz="3789.3" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="huizhuantai">
+    <inertial>
+      <origin
+        xyz="-0.033183 -0.98161 -0.29422"
+        rpy="0 0 0" />
+      <mass
+        value="4155.4" />
+      <inertia
+        ixx="3529.1"
+        ixy="203.56"
+        ixz="1.8362"
+        iyy="1890.9"
+        iyz="99.215"
+        izz="4823.8" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/huizhuantai.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/huizhuantai.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint1"
+    type="continuous">
+    <origin
+      xyz="0 -0.1 0"
+      rpy="0 0 0.39" />
+    <parent
+      link="base_link" />
+    <child
+      link="huizhuantai" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="-3.14"
+      upper="3.14"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="dongbi">
+    <inertial>
+      <origin
+        xyz="-8.6042E-15 2.7656 0.58457"
+        rpy="0 0 0" />
+      <mass
+        value="1139.2" />
+      <inertia
+        ixx="2254.3"
+        ixy="-2.1424E-12"
+        ixz="1.1527E-12"
+        iyy="117.73"
+        iyz="110.05"
+        izz="2173.1" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/dongbi.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/dongbi.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint2"
+    type="revolute">
+    <origin
+      xyz="0 0.1 0"
+      rpy="0 0 0" />
+    <parent
+      link="huizhuantai" />
+    <child
+      link="dongbi" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-0.8"
+      upper="1.1"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="dougan">
+    <inertial>
+      <origin
+        xyz="-1.0658E-14 0.8525 0.13673"
+        rpy="0 0 0" />
+      <mass
+        value="588.48" />
+      <inertia
+        ixx="532.28"
+        ixy="1.0556E-11"
+        ixz="-9.9536E-13"
+        iyy="30.031"
+        iyz="47.289"
+        izz="525.77" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/dougan.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/dougan.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint3"
+    type="revolute">
+    <origin
+      xyz="0 5.7 0"
+      rpy="0 0 0" />
+    <parent
+      link="dongbi" />
+    <child
+      link="dougan" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="-3"
+      upper="-0.71"
+      effort="100"
+      velocity="1" />
+  </joint>
+  <link
+    name="chandou">
+    <inertial>
+      <origin
+        xyz="0.63243 0.41031 6.275E-07"
+        rpy="0 0 0" />
+      <mass
+        value="285.1" />
+      <inertia
+        ixx="135.44"
+        ixy="12.871"
+        ixz="0.0021997"
+        iyy="173.33"
+        iyz="-0.0023352"
+        izz="90.525" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/chandou.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://excavator1/meshes/chandou.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint4"
+    type="revolute">
+    <origin
+      xyz="0 2.925 0"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="dougan" />
+    <child
+      link="chandou" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-2.72"
+      upper="0.6"
+      effort="100"
+      velocity="1" />
+  </joint>
+</robot>
